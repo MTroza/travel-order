@@ -1,51 +1,45 @@
-function generateTravelOrder(){
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
 
-document.getElementById("oNo").innerText =
-document.getElementById("toNo").value;
+.form-container {
+  width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border: 2px solid #000;
+}
 
-document.getElementById("oDate").innerText =
-document.getElementById("date").value;
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-document.getElementById("oName").innerText =
-document.getElementById("name").value;
+.logo {
+  width: 80px;
+}
 
-document.getElementById("oPosition").innerText =
-document.getElementById("position").value;
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  text-decoration: underline;
+}
 
-document.getElementById("oSalary").innerText =
-document.getElementById("salary").value;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 
-document.getElementById("oStation").innerText =
-document.getElementById("station").value;
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
 
-document.getElementById("oDeparture").innerText =
-document.getElementById("departure").value;
-
-document.getElementById("oReturn").innerText =
-document.getElementById("return").value;
-
-document.getElementById("oDestination").innerText =
-document.getElementById("destination").value;
-
-document.getElementById("oPurpose").innerText =
-document.getElementById("purpose").value;
-
-document.getElementById("oObjective").innerText =
-document.getElementById("objective").value;
-
-document.getElementById("oPerdiem").innerText =
-document.getElementById("perdiem").value;
-
-document.getElementById("oLaborers").innerText =
-document.getElementById("laborers").value;
-
-document.getElementById("oAppropriation").innerText =
-document.getElementById("appropriation").value;
-
-document.getElementById("oTransport").innerText =
-document.getElementById("transport").value;
-
-document.getElementById("oRemarks").innerText =
-document.getElementById("remarks").value;
-
+input, textarea {
+  padding: 5px;
+  border: 1px solid #000;
 }
