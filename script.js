@@ -1,45 +1,56 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    margin:20px;
 }
 
-.form-container {
-  width: 800px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border: 2px solid #000;
+.container{
+    max-width:1100px;
+    margin:auto;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.form-section{
+    background:white;
+    padding:20px;
+    border-radius:10px;
 }
 
-.logo {
-  width: 80px;
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
 }
 
-h1 {
-  text-align: center;
-  margin: 20px 0;
-  text-decoration: underline;
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    cursor:pointer;
 }
 
-label {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
+.travel-order{
+    background:white;
+    padding:40px;
+    margin-top:20px;
+    border:2px solid black;
 }
 
-input, textarea {
-  padding: 5px;
-  border: 1px solid #000;
+.header{
+    text-align:center;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+}
+
+.signature{
+    display:flex;
+    justify-content:space-around;
+    margin-top:60px;
 }
