@@ -4,6 +4,7 @@
     <title>Travel Order Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
@@ -11,8 +12,6 @@
     <h1>Travel Order Entry Form</h1>
 
     <div class="form-section">
-
-       
 
         <label>Name</label>
         <input type="text" id="name">
@@ -59,6 +58,7 @@
         <button onclick="generateTravelOrder()">
             Generate Travel Order
         </button>
+
         <button id="printBtn" onclick="window.print()" style="display:none;">
             Print Travel Order
         </button>
@@ -67,36 +67,39 @@
 
     <hr>
 
+    <!-- OUTPUT SECTION -->
     <div id="output" class="travel-order">
 
-   
+        <!-- HEADER -->
+        <div class="header">
 
-    <div class="header">
-        <img src="image.png" class="logo">
-        <h3>Republic of the Philippines</h3>
-        <h2>DEPARTMENT OF AGRICULTURE</h2>
-        <h4>Caraga Region</h4>
+            <!-- LEFT: LOGO -->
+            <img src="image.png" class="logo">
 
-        <h1>TRAVEL ORDER</h1>
-    </div>
- 
-        <div class="top-right">
-        <div>No. ____________________</div>
-        <div>Date ___________________</div>
-    </div>
-        
+            <!-- CENTER TEXT -->
+            <div class="header-center">
+                <h3>Republic of the Philippines</h3>
+                <h2>DEPARTMENT OF AGRICULTURE</h2>
+                <h4>Caraga Region</h4>
+
+                <div class="header-title">TRAVEL ORDER</div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="top-right">
+                <div>No. ____________________</div>
+                <div>Date ___________________</div>
+            </div>
+
+        </div>
+
+        <!-- DETAILS -->
         <p><strong>Name:</strong> <span id="oName"></span></p>
-
         <p><strong>Position:</strong> <span id="oPosition"></span></p>
-
         <p><strong>Salary per Month:</strong> <span id="oSalary"></span></p>
-
         <p><strong>Office Station:</strong> <span id="oStation"></span></p>
-
         <p><strong>Departure:</strong> <span id="oDeparture"></span></p>
-
         <p><strong>Return Date:</strong> <span id="oReturn"></span></p>
-
         <p><strong>Destination:</strong> <span id="oDestination"></span></p>
 
         <p><strong>Purpose:</strong></p>
@@ -106,28 +109,23 @@
         <p id="oObjective"></p>
 
         <p><strong>Per Diem Allowed:</strong> <span id="oPerdiem"></span></p>
-
         <p><strong>Assistant Laborers Allowed:</strong> <span id="oLaborers"></span></p>
-
         <p><strong>Appropriation:</strong> <span id="oAppropriation"></span></p>
-
         <p><strong>Means of Transportation:</strong> <span id="oTransport"></span></p>
-
         <p><strong>Remarks:</strong> <span id="oRemarks"></span></p>
 
         <br><br>
 
+        <!-- SIGNATURE -->
         <div class="signature">
 
             <div>
-                _______________________
-                <br>
+                _______________________<br>
                 Recommending Approval
             </div>
 
             <div>
-                _______________________
-                <br>
+                _______________________<br>
                 Approved
             </div>
 
