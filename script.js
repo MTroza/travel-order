@@ -42,4 +42,12 @@ document.getElementById("transport").value;
 document.getElementById("oRemarks").innerText =
 document.getElementById("remarks").value;
 
+document.querySelector(".travel-order").style.display = "block";
+
+document.getElementById("printBtn").style.display = "inline-block";
+
+document.querySelector(".travel-order").scrollIntoView({
+    behavior:"smooth"
+});
+
 }
