@@ -102,11 +102,56 @@ button{
 }
 
 /* ================= PRINT SETTINGS ================= */
-@page{
-    size:A4;
-    margin:15mm;
+/* A4 PAGE SETUP */
+@page {
+    size: A4;
+    margin: 0; /* we control margins manually */
 }
+/* GENERAL PAGE */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+/* CONTAINER */
+.container {
+    width: 210mm;   /* A4 width */
+    min-height: 297mm; /* A4 height */
+    margin: auto;
+    background: white;
+}
+/* OUTPUT AREA (TRAVEL ORDER PAPER) */
+.travel-order {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm; /* this creates space inside */
+    box-sizing: border-box;
 
+    /* THIS CREATES THE BORDER */
+    border: 1px solid #000;
+
+    /* optional: makes it look like a printed form */
+    background: white;
+}
+/* OPTIONAL: PRINT PREVIEW CLEAN */
+@media print {
+    body {
+        background: white;
+    }
+
+    .form-section,
+    button,
+    hr,
+    h1 {
+        display: none;
+    }
+
+    .travel-order {
+        border: 1px solid #000;
+        padding: 20mm;
+        margin: 0;
+    }
+}
 @media print{
 
     body{
@@ -120,11 +165,16 @@ button{
         display:none;
     }
 
-    .travel-order{
-        display:block !important;
-        border:none;
-        width:100%;
-        margin:0;
-        padding:0;
-    }
+    .travel-order {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 15mm;
+    box-sizing: border-box;
+
+    border: 1px solid #000;
+
+    /* creates visual inset feel */
+    outline: 1px solid #000;
+    outline-offset: -10mm;
+
 }
