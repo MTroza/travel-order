@@ -59,3 +59,30 @@ button{
 .travel-order{
     display:none;
 }
+@page{
+    size:A4;
+    margin:15mm;
+}
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    .form-section,
+    h1:first-child,
+    hr,
+    #printBtn{
+        display:none;
+    }
+
+    .travel-order{
+        display:block !important;
+        border:none;
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+
+}
