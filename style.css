@@ -91,10 +91,18 @@ button{
     display:block;
     margin:auto;
 }
+.travel-order{
+    position:relative;
+    background:white;
+    padding:40px;
+    margin-top:20px;
+    border:2px solid black;
+}
+
 .top-right{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    margin-bottom:20px;
-    font-weight:bold;
+    position:absolute;
+    top:20px;
+    right:40px;
+    text-align:left;
+    line-height:2;
 }
