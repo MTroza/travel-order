@@ -106,3 +106,51 @@ button{
     text-align:left;
     line-height:2;
 }
+.travel-order{
+    display:none;
+    position:relative;
+    background:white;
+    padding:40px;
+    margin-top:20px;
+    border:2px solid black;
+}
+
+.top-right{
+    position:absolute;
+    top:20px;
+    right:40px;
+    text-align:left;
+    line-height:2;
+    font-weight:bold;
+}
+
+.logo{
+    width:90px;
+    display:block;
+    margin:auto;
+}
+@page{
+    size:A4;
+    margin:15mm;
+}
+
+@media print{
+
+    .form-section,
+    #printBtn,
+    hr{
+        display:none;
+    }
+
+    .travel-order{
+        display:block !important;
+        border:none;
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+
+    body{
+        background:white;
+    }
+}
