@@ -1,11 +1,5 @@
 function generateTravelOrder(){
 
-document.getElementById("oNo").innerText =
-document.getElementById("toNo").value;
-
-document.getElementById("oDate").innerText =
-document.getElementById("date").value;
-
 document.getElementById("oName").innerText =
 document.getElementById("name").value;
 
