@@ -86,3 +86,8 @@ button{
     }
 
 }
+.logo{
+    width:90px;
+    display:block;
+    margin:auto;
+}
