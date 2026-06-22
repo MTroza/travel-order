@@ -1,180 +1,137 @@
-body{
-    font-family: Arial, sans-serif;
-    background:#f2f2f2;
-    margin:20px;
-}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Order Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-.container{
-    max-width:1100px;
-    margin:auto;
-}
+  <body>
+    <div class="container">
+      <h1>Travel Order Entry Form</h1>
 
-/* ================= FORM SECTION ================= */
-.form-section{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-}
+      <div class="form-section">
+        <label>Name</label>
+        <input type="text" id="name" />
 
-label{
-    display:block;
-    margin-top:10px;
-    font-weight:bold;
-}
+        <label>Position</label>
+        <input type="text" id="position" />
 
-input, textarea{
-    width:100%;
-    padding:8px;
-    margin-top:5px;
-}
+        <label>Salary per Month</label>
+        <input type="text" id="salary" />
 
-button{
-    margin-top:20px;
-    padding:10px 20px;
-    cursor:pointer;
-}
+        <label>Office Station</label>
+        <input type="text" id="station" />
 
-/* ================= TRAVEL ORDER BOX ================= */
-.travel-order{
-    display:none;
-    position:relative;
-    background:white;
-    padding:40px;
-    margin-top:20px;
-    border:2px solid black;
-}
+        <label>Departure Date</label>
+        <input type="date" id="departure" />
 
-/* ================= HEADER LAYOUT ================= */
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:relative;
-    text-align:center;
-    margin-bottom:20px;
-}
+        <label>Return Date</label>
+        <input type="date" id="return" />
 
-/* LEFT: LOGO */
-.logo{
-    width:150px;
-    height:auto;
-}
+        <label>Destination</label>
+        <input type="text" id="destination" />
 
-/* CENTER TEXT BLOCK */
-.header-center{
-    text-align:center;
-    flex:1;
-}
+        <label>Specific Purpose of Trip</label>
+        <textarea id="purpose"></textarea>
 
-.header-center h3,
-.header-center h2,
-.header-center h4{
-    margin:2px 0;
-}
+        <label>Objectives</label>
+        <textarea id="objective"></textarea>
 
-/* TITLE (TRAVEL ORDER) */
-.header-title{
-    margin-top:10px;
-    font-size:26px;
-    font-weight:bold;
-}
+        <label>Per Diem Allowed</label>
+        <input type="text" id="perdiem" />
 
-/* RIGHT SIDE (No & Date aligned with title) */
-.top-right{
-    position:absolute;
-    right:0;
-    top:120px; /* aligns with TRAVEL ORDER level */
-    text-align:left;
-    font-weight:bold;
-    line-height:1.8;
-}
+        <label>Assistant Laborers Allowed</label>
+        <input type="text" id="laborers" />
 
-/* ================= CONTENT ================= */
-.row{
-    display:flex;
-    justify-content:space-between;
-}
+        <label>Appropriation</label>
+        <input type="text" id="appropriation" />
 
-.signature{
-    display:flex;
-    justify-content:space-around;
-    margin-top:60px;
-}
+        <label>Means of Transportation</label>
+        <input type="text" id="transport" />
 
-/* ================= PRINT SETTINGS ================= */
-/* A4 PAGE SETUP */
-@page {
-    size: A4;
-    margin: 0; /* we control margins manually */
-}
-/* GENERAL PAGE */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-/* CONTAINER */
-.container {
-    width: 210mm;   /* A4 width */
-    min-height: 297mm; /* A4 height */
-    margin: auto;
-    background: white;
-}
-/* OUTPUT AREA (TRAVEL ORDER PAPER) */
-.travel-order {
-    width: 210mm;
-    min-height: 297mm;
-    padding: 20mm; /* this creates space inside */
-    box-sizing: border-box;
+        <label>Remarks</label>
+        <textarea id="remarks"></textarea>
 
-    /* THIS CREATES THE BORDER */
-    border: 1px solid #000;
+        <button onclick="generateTravelOrder()">Generate Travel Order</button>
 
-    /* optional: makes it look like a printed form */
-    background: white;
-}
-/* OPTIONAL: PRINT PREVIEW CLEAN */
-@media print {
-    body {
-        background: white;
-    }
+        <button id="printBtn" onclick="window.print()" style="display: none">
+          Print Travel Order
+        </button>
+      </div>
 
-    .form-section,
-    button,
-    hr,
-    h1 {
-        display: none;
-    }
+      <hr />
 
-    .travel-order {
-        border: 1px solid #000;
-        padding: 20mm;
-        margin: 0;
-    }
-}
-@media print{
+      <!-- OUTPUT SECTION -->
+      <div id="output" class="travel-order">
+        <!-- HEADER -->
+        <div class="header">
+          <!-- LEFT: LOGO -->
+          <img src="image.png" class="logo" />
 
-    body{
-        background:white;
-    }
+          <!-- CENTER TEXT -->
+          <div class="header-center">
+            <h4>Republic of the Philippines</h4>
+            <h4>DEPARTMENT OF AGRICULTURE</h4>
+            <h4>Caraga Region</h4>
+            <h4>Capitol Site, Butuan City</h4>
+            <h4>Tel. No: (085) 342-4092 Telefax No.: (085) 341-2114</h4>
 
-    .form-section,
-    h1:first-child,
-    hr,
-    #printBtn{
-        display:none;
-    }
+            <div class="header-title">TRAVEL ORDER</div>
+          </div>
 
-    .travel-order {
-    width: 210mm;
-    min-height: 297mm;
-    padding: 15mm;
-    box-sizing: border-box;
+          <!-- RIGHT SIDE -->
+          <div class="top-right">
+            <br /><br />
+            <div>No. ____________________</div>
+            <div>Date ___________________</div>
+          </div>
+        </div>
 
-    border: 1px solid #000;
+        <!-- DETAILS -->
+        <br /><br />
+        <p><strong>Name:</strong> <span id="oName"></span></p>
+        <p><strong>Position:</strong> <span id="oPosition"></span></p>
+        <p><strong>Salary per Month:</strong> <span id="oSalary"></span></p>
+        <p><strong>Office Station:</strong> <span id="oStation"></span></p>
+        <p><strong>Departure:</strong> <span id="oDeparture"></span></p>
+        <p><strong>Return Date:</strong> <span id="oReturn"></span></p>
+        <p><strong>Destination:</strong> <span id="oDestination"></span></p>
 
-    /* creates visual inset feel */
-    outline: 1px solid #000;
-    outline-offset: -10mm;
+        <p><strong>Purpose:</strong></p>
+        <p id="oPurpose"></p>
 
-}
+        <p><strong>Objectives:</strong></p>
+        <p id="oObjective"></p>
+
+        <p><strong>Per Diem Allowed:</strong> <span id="oPerdiem"></span></p>
+        <p>
+          <strong>Assistant Laborers Allowed:</strong>
+          <span id="oLaborers"></span>
+        </p>
+        <p><strong>Appropriation:</strong> <span id="oAppropriation"></span></p>
+        <p>
+          <strong>Means of Transportation:</strong>
+          <span id="oTransport"></span>
+        </p>
+        <p><strong>Remarks:</strong> <span id="oRemarks"></span></p>
+
+        <br /><br />
+
+        <!-- SIGNATURE -->
+        <div class="signature">
+          <div>
+            _______________________<br />
+            Recommending Approval
+          </div>
+
+          <div>
+            _______________________<br />
+            Approved
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
