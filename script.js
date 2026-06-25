@@ -10,8 +10,9 @@ function formatDate(dateString) {
   return date.toLocaleDateString("en-US", options);
 }
 function generateTravelOrder() {
-  document.getElementById("oName").textContent =
-    document.getElementById("name").value;
+  document.getElementById("oName").textContent = document
+    .getElementById("name")
+    .value.toUpperCase();
 
   document.getElementById("oPosition").textContent =
     document.getElementById("position").value;
