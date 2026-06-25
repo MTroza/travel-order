@@ -1,136 +1,130 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Travel Order Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    margin:20px;
+}
 
-  <body>
-    <div class="container">
-      <h1>Travel Order Entry Form</h1>
+.container{
+    max-width:1100px;
+    margin:auto;
+}
 
-      <div class="form-section">
-        <label>Name</label>
-        <input type="text" id="name" />
+/* ================= FORM SECTION ================= */
+.form-section{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
 
-        <label>Position</label>
-        <input type="text" id="position" />
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
 
-        <label>Salary per Month</label>
-        <input type="text" id="salary" />
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
 
-        <label>Office Station</label>
-        <input type="text" id="station" />
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    cursor:pointer;
+}
 
-        <label>Departure Date</label>
-        <input type="date" id="departure" />
+/* ================= TRAVEL ORDER BOX ================= */
+.travel-order{
+    display:none;
+    position:relative;
+    background:white;
+    padding:40px;
+    margin-top:20px;
+    border:2px solid black;
+}
 
-        <label>Return Date</label>
-        <input type="date" id="return" />
+/* ================= HEADER LAYOUT ================= */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    text-align:center;
+    margin-bottom:20px;
+}
 
-        <label>Destination</label>
-        <input type="text" id="destination" />
+/* LEFT: LOGO */
+.logo{
+    width:90px;
+    height:auto;
+}
 
-        <label>Specific Purpose of Trip</label>
-        <textarea id="purpose"></textarea>
+/* CENTER TEXT BLOCK */
+.header-center{
+    text-align:center;
+    flex:1;
+}
 
-        <label>Objectives</label>
-        <textarea id="objective"></textarea>
+.header-center h3,
+.header-center h2,
+.header-center h4{
+    margin:2px 0;
+}
 
-        <label>Per Diem Allowed</label>
-        <input type="text" id="perdiem" />
+/* TITLE (TRAVEL ORDER) */
+.header-title{
+    margin-top:10px;
+    font-size:26px;
+    font-weight:bold;
+}
 
-        <label>Assistant Laborers Allowed</label>
-        <input type="text" id="laborers" />
+/* RIGHT SIDE (No & Date aligned with title) */
+.top-right{
+    position:absolute;
+    right:0;
+    top:120px; /* aligns with TRAVEL ORDER level */
+    text-align:left;
+    font-weight:bold;
+    line-height:1.8;
+}
 
-        <label>Appropriation</label>
-        <input type="text" id="appropriation" />
+/* ================= CONTENT ================= */
+.row{
+    display:flex;
+    justify-content:space-between;
+}
 
-        <label>Means of Transportation</label>
-        <input type="text" id="transport" />
+.signature{
+    display:flex;
+    justify-content:space-around;
+    margin-top:60px;
+}
 
-        <label>Remarks</label>
-        <textarea id="remarks"></textarea>
+/* ================= PRINT SETTINGS ================= */
+@page{
+    size:A4;
+    margin:15mm;
+}
 
-        <button onclick="generateTravelOrder()">Generate Travel Order</button>
+@media print{
 
-        <button id="printBtn" onclick="window.print()" style="display: none">
-          Print Travel Order
-        </button>
-      </div>
+    body{
+        background:white;
+    }
 
-      <hr />
+    .form-section,
+    h1:first-child,
+    hr,
+    #printBtn{
+        display:none;
+    }
 
-      <!-- OUTPUT SECTION -->
-      <div id="output" class="travel-order">
-        <!-- HEADER -->
-        <div class="header">
-          <!-- LEFT: LOGO -->
-          <img src="image.png" class="logo" />
-
-          <!-- CENTER TEXT -->
-          <div class="header-center">
-            <h4>Republic of the Philippines</h4>
-            <h4>DEPARTMENT OF AGRICULTURE</h4>
-            <h4>Caraga Region</h4>
-            <h4>Capitol Site, Butuan City</h4>
-            <h4>Tel. No: (085) 342-4092 Telefax No.: (085) 341-2114</h4>
-
-            <div class="header-title">TRAVEL ORDER</div>
-          </div>
-
-          <!-- RIGHT SIDE -->
-          <div class="top-right">
-         
-            <div>No. ____________________</div>
-            <div>Date ___________________</div>
-          </div>
-        </div>
-
-        <!-- DETAILS -->
-        <p><strong>Name:</strong> <span id="oName"></span></p>
-        <p><strong>Position:</strong> <span id="oPosition"></span></p>
-        <p><strong>Salary per Month:</strong> <span id="oSalary"></span></p>
-        <p><strong>Office Station:</strong> <span id="oStation"></span></p>
-        <p><strong>Departure:</strong> <span id="oDeparture"></span></p>
-        <p><strong>Return Date:</strong> <span id="oReturn"></span></p>
-        <p><strong>Destination:</strong> <span id="oDestination"></span></p>
-
-        <p><strong>Purpose:</strong></p>
-        <p id="oPurpose"></p>
-
-        <p><strong>Objectives:</strong></p>
-        <p id="oObjective"></p>
-
-        <p><strong>Per Diem Allowed:</strong> <span id="oPerdiem"></span></p>
-        <p>
-          <strong>Assistant Laborers Allowed:</strong>
-          <span id="oLaborers"></span>
-        </p>
-        <p><strong>Appropriation:</strong> <span id="oAppropriation"></span></p>
-        <p>
-          <strong>Means of Transportation:</strong>
-          <span id="oTransport"></span>
-        </p>
-        <p><strong>Remarks:</strong> <span id="oRemarks"></span></p>
-
-        <br /><br />
-
-        <!-- SIGNATURE -->
-        <div class="signature">
-          <div>
-            _______________________<br />
-            Recommending Approval
-          </div>
-
-          <div>
-            _______________________<br />
-            Approved
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
-</html>
+    .travel-order{
+        display:block !important;
+        border:none;
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+}
