@@ -1,3 +1,14 @@
+function formatDate(dateString) {
+  const date = new Date(dateString);
+
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+  };
+
+  return date.toLocaleDateString("en-US", options);
+}
 function generateTravelOrder() {
   document.getElementById("oName").textContent =
     document.getElementById("name").value;
@@ -11,11 +22,13 @@ function generateTravelOrder() {
   document.getElementById("oStation").textContent =
     document.getElementById("station").value;
 
-  document.getElementById("oDeparture").textContent =
-    document.getElementById("departure").value;
+  document.getElementById("oDeparture").textContent = formatDate(
+    document.getElementById("departure").value
+  );
 
-  document.getElementById("oReturn").textContent =
-    document.getElementById("return").value;
+  document.getElementById("oReturn").textContent = formatDate(
+    document.getElementById("return").value
+  );
 
   document.getElementById("oDestination").textContent =
     document.getElementById("destination").value;
