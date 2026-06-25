@@ -199,9 +199,9 @@ body {
 /* NO AND DATE */
 
 .order-info{
-    width:30.5%;
+    width:29%;
     margin-left:auto;
-    margin-right:10;
+    margin-right:10px;
     margin-bottom:20px;
     position:relative;
     left:20px; /* move slightly right */
@@ -221,12 +221,22 @@ body {
     display: flex;
     align-items: center;
   }
+ 
+  .field{
+    display:flex;
+    align-items:center;
+}
 
-  .field label {
-    min-width: 140px;
-    font-weight: normal;
-  }
+.field label{
+    min-width:85px;
+    font-weight:normal;
+}
 
+.salary-label,
+.office-label,
+.return-label{
+    min-width:140px !important;
+}
   .field span {
     flex: 1;
     border-bottom: 1px solid black;
@@ -325,4 +335,17 @@ body {
 }
 #oName{
     font-weight:bold;
+}
+.field{
+    display:flex;
+    align-items:center;
+}
+
+.field label{
+    min-width:80px;
+}
+
+.field span{
+    flex:1;
+    border-bottom:1px solid black;
 }
