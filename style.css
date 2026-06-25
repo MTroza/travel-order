@@ -1,130 +1,283 @@
-body{
-    font-family: Arial, sans-serif;
-    background:#f2f2f2;
-    margin:20px;
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 20px;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
+.container {
+  max-width: 1100px;
+  margin: auto;
 }
 
 /* ================= FORM SECTION ================= */
-.form-section{
-    background:white;
-    padding:20px;
-    border-radius:10px;
+.form-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-label{
-    display:block;
-    margin-top:10px;
-    font-weight:bold;
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-input, textarea{
-    width:100%;
-    padding:8px;
-    margin-top:5px;
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
 }
 
-button{
-    margin-top:20px;
-    padding:10px 20px;
-    cursor:pointer;
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 /* ================= TRAVEL ORDER BOX ================= */
-.travel-order{
-    display:none;
-    position:relative;
-    background:white;
-    padding:40px;
-    margin-top:20px;
-    border:2px solid black;
+.travel-order {
+  display: none;
+  position: relative;
+  background: white;
+  padding: 40px;
+  margin-top: 20px;
+  border: 2px solid black;
 }
 
 /* ================= HEADER LAYOUT ================= */
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:relative;
-    text-align:center;
-    margin-bottom:20px;
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 /* LEFT: LOGO */
-.logo{
-    width:90px;
-    height:auto;
+.logo {
+  width: 130px;
+  height: auto;
 }
 
 /* CENTER TEXT BLOCK */
-.header-center{
-    text-align:center;
-    flex:1;
+.header-center {
+  flex: 1;
+  text-align: center;
 }
 
-.header-center h3,
 .header-center h2,
-.header-center h4{
-    margin:2px 0;
+.header-center h3,
+.header-center h4 {
+  margin: 0;
 }
 
 /* TITLE (TRAVEL ORDER) */
-.header-title{
-    margin-top:10px;
-    font-size:26px;
-    font-weight:bold;
+.header-title {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* RIGHT SIDE (No & Date aligned with title) */
-.top-right{
-    position:absolute;
-    right:0;
-    top:120px; /* aligns with TRAVEL ORDER level */
-    text-align:left;
-    font-weight:bold;
-    line-height:1.8;
+.top-right {
+  width: 180px;
+  text-align: left;
 }
 
 /* ================= CONTENT ================= */
-.row{
-    display:flex;
-    justify-content:space-between;
+.row {
+  display: flex;
+  justify-content: space-between;
 }
+
+.signature {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+/* ================= PRINT SETTINGS ================= */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .form-section,
+  h1:first-child,
+  hr,
+  #printBtn {
+    display: none;
+  }
+
+  .travel-order {
+    display: block !important;
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+/* A4 PAGE SETUP */
+@page {
+  size: A4;
+  margin: 0; /* we control margins manually */
+}
+
+/* GENERAL PAGE */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* CONTAINER */
+.container {
+  width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height */
+  margin: auto;
+  background: white;
+}
+
+/* OUTPUT AREA (TRAVEL ORDER PAPER) */
+.travel-order{
+    width:210mm;
+    min-height:297mm;
+    margin:auto;
+    padding:15mm;
+    border:1px solid black;
+    box-sizing:border-box;
+    background:#fff;
+}
+.logo{
+    width:130px;
+}
+.header-center{
+    text-align:center;
+}
+
+.header-center h2,
+.header-center h3,
+.header-center h4{
+    margin:0;
+}
+
+.header-title{
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* NO AND DATE */
+
+.order-info{
+    width:320px;
+    margin-left:auto;
+    margin-top:25px;
+    margin-bottom:25px;
+    line-height:2;
+    font-size:18px;
+}
+
+/* TWO COLUMN DETAILS */
+
+.details-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 40px;
+    margin-bottom:20px;
+}
+
+.field{
+    display:flex;
+    align-items:center;
+}
+
+.field label{
+    min-width:140px;
+    font-weight:bold;
+}
+
+.field span{
+    flex:1;
+    border-bottom:1px solid black;
+    min-height:22px;
+}
+
+/* FULL WIDTH LINES */
+
+.full-field{
+    display:flex;
+    margin-bottom:18px;
+}
+
+.full-field label{
+    min-width:220px;
+    font-weight:bold;
+}
+
+.full-field span{
+    flex:1;
+    border-bottom:1px solid black;
+    min-height:22px;
+}
+
+/* SIGNATURES */
 
 .signature{
     display:flex;
     justify-content:space-around;
-    margin-top:60px;
+    margin-top:120px;
 }
 
-/* ================= PRINT SETTINGS ================= */
-@page{
-    size:A4;
-    margin:15mm;
+.sign-box{
+    width:250px;
+    text-align:center;
 }
 
-@media print{
+.line{
+    border-top:1px solid black;
+    margin-bottom:8px;
+}
+  /* THIS CREATES THE BORDER */
+  border: 1px solid #000;
 
-    body{
-        background:white;
-    }
+  /* optional: makes it look like a printed form */
+  background: white;
+}
 
-    .form-section,
-    h1:first-child,
-    hr,
-    #printBtn{
-        display:none;
-    }
+/* OPTIONAL: PRINT PREVIEW CLEAN */
+@media print {
+  body {
+    background: white;
+  }
 
-    .travel-order{
-        display:block !important;
-        border:none;
-        width:100%;
-        margin:0;
-        padding:0;
-    }
+  .form-section,
+  button,
+  hr,
+  h1 {
+    display: none;
+  }
+
+  .travel-order {
+    border: 1px solid #000;
+    padding: 20mm;
+    margin: 0;
+  }
+}
+.travel-order {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm;
+  box-sizing: border-box;
+
+  border: 1px solid #000;
+
+  /* creates visual inset feel */
+  outline: 1px solid #000;
+  outline-offset: -10mm;
 }
