@@ -16,10 +16,9 @@ body {
   border-radius: 10px;
 }
 
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
+.field label,
+.full-field label{
+    font-weight:normal;
 }
 
 input,
@@ -46,22 +45,22 @@ button {
 }
 
 /* ================= HEADER LAYOUT ================= */
-.header{
-    display:grid;
-    grid-template-columns:120px 1fr 120px;
-    align-items:start;
-    margin-bottom:20px;
+.header {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  align-items: start;
+  margin-bottom: 20px;
 }
-.header-left{
-    text-align:left;
-}
-
-.header-center{
-    text-align:center;
+.header-left {
+  text-align: left;
 }
 
-.header-right{
-    /* empty spacer */
+.header-center {
+  text-align: center;
+}
+
+.header-right {
+  /* empty spacer */
 }
 /* LEFT: LOGO */
 .logo {
@@ -75,29 +74,32 @@ button {
   text-align: center;
 }
 
-.header-center h5,
-.header-center h5,
-.header-center h5 {
-  margin: 0;
+.header-center h4,
+.header-center h4{
+    font-weight: normal;
+}
+
+.header-center h3{
+    font-weight: bold;
 }
 
 /* TITLE (TRAVEL ORDER) */
-.double-line{
-    width:164%;
-    height:1px;
+.double-line {
+  width: 164%;
+  height: 1px;
 
-    border-top:1px solid #000;
-    border-bottom:1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 
-    margin-top:25px;
-    margin-bottom:20px;
-    margin-left:-32%;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  margin-left: -32%;
 }
-.header-title{
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-    text-decoration:underline;
+.header-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* RIGHT SIDE (No & Date aligned with title) */
@@ -166,105 +168,106 @@ body {
 }
 
 /* OUTPUT AREA (TRAVEL ORDER PAPER) */
-.travel-order{
-    width:210mm;
-    min-height:297mm;
-    margin:auto;
-    padding:15mm;
-    border:1px solid black;
-    box-sizing:border-box;
-    background:#fff;
+.travel-order {
+  width: 210mm;
+  min-height: 297mm;
+  margin: auto;
+  padding: 15mm;
+  border: 1px solid black;
+  box-sizing: border-box;
+  background: #fff;
 }
-.logo{
-    width:125px;
+.logo {
+  width: 125px;
 }
-.header-center{
-    text-align:center;
+.header-center {
+  text-align: center;
 }
 
 .header-center h2,
 .header-center h3,
-.header-center h4{
-    margin:0;
+.header-center h4 {
+  margin: 0;
 }
 
-.header-title{
-    margin-top:20px;
-    font-size:22px;
-    font-weight:bold;
+.header-title {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* NO AND DATE */
 
 .order-info{
-    width:320px;
+    width:30.5%;
     margin-left:auto;
-    margin-top:25px;
-    margin-bottom:25px;
+    margin-right:10;
+    margin-bottom:20px;
+    position:relative;
+    left:20px; /* move slightly right */
     line-height:2;
-    font-size:18px;
 }
 
-/* TWO COLUMN DETAILS */
+  /* TWO COLUMN DETAILS */
 
-.details-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:5px 40px;
-    margin-bottom:10px;
-}
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 20px;
+    margin-bottom: 10px;
+  }
 
-.field{
-    display:flex;
-    align-items:center;
-}
+  .field {
+    display: flex;
+    align-items: center;
+  }
 
-.field label{
-    min-width:140px;
-    font-weight:bold;
-}
+  .field label {
+    min-width: 140px;
+    font-weight: normal;
+  }
 
-.field span{
-    flex:1;
-    border-bottom:1px solid black;
-    min-height:22px;
-}
+  .field span {
+    flex: 1;
+    border-bottom: 1px solid black;
+    min-height: 22px;
+  }
 
-/* FULL WIDTH LINES */
+  /* FULL WIDTH LINES */
 
-.full-field{
-    display:flex;
-    margin-bottom:6px;
-}
+  .full-field {
+    display: flex;
+    margin-bottom: 6px;
+  }
 
-.full-field label{
-    min-width:220px;
-    font-weight:bold;
-}
+  .full-field label {
+    min-width: 220px;
+    font-weight: normal;
+  }
 
-.full-field span{
-    flex:1;
-    border-bottom:1px solid black;
-    min-height:22px;
-}
+  .full-field span {
+    flex: 1;
+    border-bottom: 1px solid black;
+    min-height: 22px;
+  }
 
-/* SIGNATURES */
+  /* SIGNATURES */
 
-.signature{
-    display:flex;
-    justify-content:space-around;
-    margin-top:120px;
-}
+  .signature {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 120px;
+  }
 
-.sign-box{
-    width:250px;
-    text-align:center;
-}
+  .sign-box {
+    width: 250px;
+    text-align: center;
+  }
 
-.line{
-    border-top:1px solid black;
-    margin-bottom:8px;
-}
+  .line {
+    border-top: 1px solid black;
+    margin-bottom: 8px;
+  }
   /* THIS CREATES THE BORDER */
   border: 1px solid #000;
 
@@ -302,4 +305,24 @@ body {
   /* creates visual inset feel */
   outline: 1px solid #000;
   outline-offset: -10mm;
+}
+.field span{
+    position:relative;
+    top:2px;
+}
+
+.full-field span{
+    flex:1;
+    border-bottom:1px solid black;
+
+    min-height:auto;
+    line-height:1;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding-bottom:0;
+}
+#oName{
+    font-weight:bold;
 }
