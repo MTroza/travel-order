@@ -1,53 +1,47 @@
-function generateTravelOrder(){
+function generateTravelOrder() {
+  document.getElementById("oName").textContent =
+    document.getElementById("name").value;
 
-document.getElementById("oName").innerText =
-document.getElementById("name").value;
+  document.getElementById("oPosition").textContent =
+    document.getElementById("position").value;
 
-document.getElementById("oPosition").innerText =
-document.getElementById("position").value;
+  document.getElementById("oSalary").textContent =
+    document.getElementById("salary").value;
 
-document.getElementById("oSalary").innerText =
-document.getElementById("salary").value;
+  document.getElementById("oStation").textContent =
+    document.getElementById("station").value;
 
-document.getElementById("oStation").innerText =
-document.getElementById("station").value;
+  document.getElementById("oDeparture").textContent =
+    document.getElementById("departure").value;
 
-document.getElementById("oDeparture").innerText =
-document.getElementById("departure").value;
+  document.getElementById("oReturn").textContent =
+    document.getElementById("return").value;
 
-document.getElementById("oReturn").innerText =
-document.getElementById("return").value;
+  document.getElementById("oDestination").textContent =
+    document.getElementById("destination").value;
 
-document.getElementById("oDestination").innerText =
-document.getElementById("destination").value;
+  document.getElementById("oPurpose").textContent =
+    document.getElementById("purpose").value;
 
-document.getElementById("oPurpose").innerText =
-document.getElementById("purpose").value;
+  document.getElementById("oObjective").textContent =
+    document.getElementById("objective").value;
 
-document.getElementById("oObjective").innerText =
-document.getElementById("objective").value;
+  document.getElementById("oPerdiem").textContent =
+    document.getElementById("perdiem").value;
 
-document.getElementById("oPerdiem").innerText =
-document.getElementById("perdiem").value;
+  document.getElementById("oLaborers").textContent =
+    document.getElementById("laborers").value;
 
-document.getElementById("oLaborers").innerText =
-document.getElementById("laborers").value;
+  document.getElementById("oAppropriation").textContent =
+    document.getElementById("appropriation").value;
 
-document.getElementById("oAppropriation").innerText =
-document.getElementById("appropriation").value;
+  document.getElementById("oTransport").textContent =
+    document.getElementById("transport").value;
 
-document.getElementById("oTransport").innerText =
-document.getElementById("transport").value;
+  document.getElementById("oRemarks").textContent =
+    document.getElementById("remarks").value;
 
-document.getElementById("oRemarks").innerText =
-document.getElementById("remarks").value;
+  document.getElementById("output").style.display = "block";
 
-document.querySelector(".travel-order").style.display = "block";
-
-document.getElementById("printBtn").style.display = "inline-block";
-
-document.querySelector(".travel-order").scrollIntoView({
-    behavior:"smooth"
-});
-
+  document.getElementById("printBtn").style.display = "inline-block";
 }
