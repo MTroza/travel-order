@@ -46,13 +46,23 @@ button {
 }
 
 /* ================= HEADER LAYOUT ================= */
-.header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 20px;
+.header{
+    display:grid;
+    grid-template-columns:120px 1fr 120px;
+    align-items:start;
+    margin-bottom:20px;
+}
+.header-left{
+    text-align:left;
 }
 
+.header-center{
+    text-align:center;
+}
+
+.header-right{
+    /* empty spacer */
+}
 /* LEFT: LOGO */
 .logo {
   width: 130px;
@@ -65,17 +75,29 @@ button {
   text-align: center;
 }
 
-.header-center h2,
-.header-center h3,
-.header-center h4 {
+.header-center h5,
+.header-center h5,
+.header-center h5 {
   margin: 0;
 }
 
 /* TITLE (TRAVEL ORDER) */
-.header-title {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: bold;
+.double-line{
+    width:164%;
+    height:2px;
+
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+
+    margin-top:25px;
+    margin-bottom:20px;
+    margin-left:-32%;
+}
+.header-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    text-decoration:underline;
 }
 
 /* RIGHT SIDE (No & Date aligned with title) */
@@ -154,7 +176,7 @@ body {
     background:#fff;
 }
 .logo{
-    width:130px;
+    width:125px;
 }
 .header-center{
     text-align:center;
